@@ -1,0 +1,47 @@
+﻿<div class="page-menu">
+    <!-- btn close on small devices -->
+    <span class="btn-menu-close" uk-toggle="target: #wrapper ; cls: mobile-active"></span>
+    <!-- traiger btn -->
+    <span class="btn-menu-trigger" uk-toggle="target: .page-menu ; cls: menu-large"></span>
+
+    <!-- logo -->
+    <div class="logo uk-visible@s">
+        <a asp-area="Admin" asp-controller="Home" asp-action="Index"> <i class=" uil-graduation-hat"></i> <span> Courseplus</span> </a>
+    </div>
+    <div class="page-menu-inner" data-simplebar>
+        <ul class="mt-0">
+            <li><a asp-area="Admin" asp-controller="Home" asp-action="Index"><i class="uil-home-alt"></i> <span> Dashboard</span></a> </li>
+            <li><a asp-area="Admin" asp-controller="Courses" asp-action="Index"><i class="uil-youtube-alt"></i> <span> Courses</span></a> </li>
+            <li><a href="messages.html"><i class="uil-envelope-alt"></i> <span> Message</span></a> </li>
+            <li><a href="students.html"><i class="uil-users-alt"></i> <span> students</span></a> </li>
+            <li>
+                <a href="instructures.html"><i class="uil-graduation-hat"></i> <span> Instructers</span></a>
+            </li>
+            <li><a href="catagories.html"><i class="uil-tag-alt"></i> <span> Catagories</span></a> </li>
+            <li><a href="#"><i class="uil-file-alt"></i> <span> Blogs</span></a> </li>
+            <li><a href="#"><i class="uil-layers"></i> <span> Pages</span></a> </li>
+            <li><a href="#"><i class="uil-chart-line"></i> <span> Report</span></a> </li>
+            <li><a href="#"><i class="uil-question-circle"></i> <span> Help</span></a> </li>
+        </ul>
+
+        <ul data-submenu-title="Setting">
+            <li><a href="setting.html"><i class="uil-cog"></i> <span> General </span></a> </li>
+            <li><a href="setting.html"><i class="uil-edit-alt"></i> <span> Site </span></a> </li>
+            <li class="#">
+                <a href="#">
+                    <i class="uil-layers"></i> <span>
+                        simple link
+                    </span>
+                </a>
+                <ul>
+                    <li>
+                        <a href="#"> simple link <span class="nav-tag">3</span></a>
+                    </li>
+                    <li><a href="#"> simple link </a></li>
+                </ul>
+            </li>
+            <li><a href="login.html"><i class="uil-sign-out-alt"></i> <span> Sign-out</span></a> </li>
+        </ul>
+
+    </div>
+</div>

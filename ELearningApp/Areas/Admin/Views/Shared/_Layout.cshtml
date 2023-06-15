@@ -1,0 +1,110 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+
+    <!-- Basic Page Needs
+    ================================================== -->
+    <title>Courseplus Learning HTML Template</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Courseplus - Professional Learning Management HTML Template">
+
+    <link href="/assets/images/favicon.png" rel="icon" type="image/png">
+
+    <!-- CSS
+    ================================================== -->
+    <partial name="_Styles" />
+    @RenderSection("Styles", required: false)
+</head>
+
+<body>
+    <!-- Wrapper -->
+    <div id="wrapper" class="admin-panel">
+
+        <!-- Header Container
+        ================================================== -->
+        <partial name="_Menu" />
+
+        <!-- Header Container
+        ================================================== -->
+        <partial name="_Header" />
+
+        <div class="page-content">
+            
+
+            <div class="page-content-inner pt-lg-0  pr-lg-0">
+
+                @RenderBody()
+
+                <!-- footer
+                ================================================== -->
+                <div class="footer">
+                    <div class="uk-grid-collapse" uk-grid>
+                        <div class="uk-width-expands uk-first-column">
+                            <p>© 2019 <strong>Courseplus</strong>. All Rights Reserved. </p>
+                        </div>
+                        <div class="uk-width-autos">
+                            <nav class="footer-nav-icon">
+                                <ul>
+                                    <li><a href="#"><i class="icon-brand-facebook"></i></a></li>
+                                    <li><a href="#"><i class="icon-brand-dribbble"></i></a></li>
+                                    <li><a href="#"><i class="icon-brand-youtube"></i></a></li>
+                                    <li><a href="#"><i class="icon-brand-twitter"></i></a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- For Night mode -->
+    <script>
+        (function (window, document, undefined) {
+            'use strict';
+            if (!('localStorage' in window)) return;
+            var nightMode = localStorage.getItem('gmtNightMode');
+            if (nightMode) {
+                document.documentElement.className += ' night-mode';
+            }
+        })(window, document);
+
+
+        (function (window, document, undefined) {
+
+            'use strict';
+
+            // Feature test
+            if (!('localStorage' in window)) return;
+
+            // Get our newly insert toggle
+            var nightMode = document.querySelector('#night-mode');
+            if (!nightMode) return;
+
+            // When clicked, toggle night mode on or off
+            nightMode.addEventListener('click', function (event) {
+                event.preventDefault();
+                document.documentElement.classList.toggle('night-mode');
+                if (document.documentElement.classList.contains('night-mode')) {
+                    localStorage.setItem('gmtNightMode', true);
+                    return;
+                }
+                localStorage.removeItem('gmtNightMode');
+            }, false);
+
+        })(window, document);
+    </script>
+
+    <!-- javaScripts
+                ================================================== -->
+    <partial name="_Scripts" />
+
+    @RenderSection("Scripts", required: false)
+
+</body>
+
+</html>

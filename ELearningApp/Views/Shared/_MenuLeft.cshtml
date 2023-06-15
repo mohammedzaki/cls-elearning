@@ -1,0 +1,104 @@
+﻿<div class="uk-navbar-left">
+
+    <!-- menu icon -->
+    <span class="mmenu-trigger">
+        <button class="hamburger hamburger--collapse" type="button">
+            <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+            </span>
+        </button>
+    </span>
+
+    <!-- logo -->
+    <a href="dashboard.html" class="logo">
+        <img src="/assets/images/logo-dark.svg" alt="">
+        <span> Courseplus</span>
+    </a>
+
+    <!-- Main Navigation -->
+
+    <nav id="navigation">
+        <ul id="responsive">
+            <li><a asp-area="Admin" asp-controller="Home" asp-action="Index">Admin</a> </li>
+            <li><a asp-controller="Home" asp-action="Index">Home</a> </li>
+            <li>
+                <a href="#">Explore</a>
+                <ul class="dropdown-nav nav-large nav-courses">
+
+                    <li>
+                        <a href="course-card.html#">
+                            <i class="icon-brand-js-square" style="color: #f7df1e;"></i> JavaScript
+                        </a>
+                    </li>
+                    <li>
+                        <a href="course-card.html">
+                            <i class="icon-brand-node-js" style="color: green;"></i> NodeJS
+                        </a>
+                    </li>
+                    <li>
+                        <a href="course-card.html">
+                            <i class="icon-brand-angular" style="color:#dd0031"></i> Angular
+                        </a>
+                    </li>
+                    <li>
+                        <a href="course-card.html">
+                            <i class="icon-brand-css3-alt" style="color: blue;"></i> CSS
+                        </a>
+                    </li>
+                    <li>
+                        <a href="course-card.html">
+                            <i class="icon-brand-html5" style=" color:#f0653f"></i> HTML5
+                        </a>
+                    </li>
+                    <li>
+                        <a href="course-card.html">
+                            <i class="icon-brand-react" style=" color:#67fcef"></i> React
+                        </a>
+                    </li>
+                    <li>
+                        <a href="course-card.html">
+                            <i class="icon-brand-vuejs" style="color: green;"></i> Vue JS
+                        </a>
+                    </li>
+                    <li>
+                        <a href="course-card.html">
+                            <i class="icon-brand-python" style="color: #b1b172;"></i> Python
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+            <li><a href="course-path.html" class="nav-active">Track</a> </li>
+            <li><a asp-controller="Books" asp-action="Index">Book</a> </li>
+            <li><a asp-controller="Blogs" asp-action="Index">Blog</a> </li>
+            <li>
+                <a href="#">Pages</a>
+                <ul class="dropdown-nav">
+                    <li><a href="page-pricing.html">Pricing</a> </li>
+                    <li><a href="page-Privacy.html">Privacy</a></li>
+                    <li><a href="page-term.html">Terms</a></li>
+                    <li><a href="page-contact.html">Contact</a></li>
+                    <li>
+                        <a href="#">Account</a>
+                        <ul class="dropdown-nav">
+                            <li><a href="page-login.html">login</a></li>
+                            <li><a href="page-register.html">register</a></li>
+                            <li><a href="page-simple-login.html">Simple login</a></li>
+                            <li><a href="page-simple-register.html">Simple register</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Development</a>
+                        <ul class="dropdown-nav">
+                            <li><a href="page-elements.html">Elements</a></li>
+                            <li><a href="page-components.html">Components</a></li>
+                            <li><a href="page-icons.html">Icons</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <!-- Main Navigation / End -->
+
+</div>

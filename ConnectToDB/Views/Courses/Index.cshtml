@@ -1,0 +1,19 @@
+﻿@model List<Course>
+
+<a asp-action="Create">Create New</a>
+<div class="course-list">
+	@foreach (var item in Model)
+	{
+		<div class="course-item">
+			<h1>@item.Title</h1>
+			<img src="@item.Img" />
+			<div>
+				<p>
+					@item.Description
+				</p>
+				<label>Duration: <span>@item.Duration</span></label>
+				<label>Price: <span>@item.Price</span></label>
+			</div>
+		</div>
+	}
+</div>

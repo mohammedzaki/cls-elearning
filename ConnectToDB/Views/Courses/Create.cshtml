@@ -1,0 +1,14 @@
+﻿@model Course
+
+<form asp-action="Create">
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label">Name</label>
+        <input type="text" class="form-control"asp-for="Name">
+    </div>
+    <div class="mb-3">
+        <label asp-for="Title" class="form-label">Title</label>
+        <input type="text" class="form-control" asp-for="Title">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
