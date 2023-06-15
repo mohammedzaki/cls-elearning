@@ -23,5 +23,9 @@ namespace ConnectToDB.Models
 		public string Duration { get; set; }
 
 		public string Img { get; set; } = "https://d2o9wnd5wywfpj.cloudfront.net/covers/32/s_banner/portfolio-08-large.jpg?1621306513";
+
+
+
+
     }
 }
