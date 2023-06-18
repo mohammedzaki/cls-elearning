@@ -31,11 +31,40 @@ namespace ConnectToDB.Controllers
         [HttpPost]
         public IActionResult Create(Course newCourseData) 
         {
-			// Sava data to db
-			_dbContext.Courses.Add(newCourseData);
-			_dbContext.SaveChanges();
+            if (ModelState.IsValid)
+            {
+                // Sava data to db
+                _dbContext.Courses.Add(newCourseData);
 
-			return RedirectToAction(nameof(Index));
+                newCourseData.Lessons.Add(new Lesson
+                {
+                    Name = "Test",
+                    Title = "RTTR"
+                });
+                newCourseData.Lessons.Add(new Lesson
+                {
+                    Name = "Test 2",
+                    Title = "RTTR"
+                });
+                newCourseData.Lessons.Add(new Lesson
+                {
+                    Name = "Test 3",
+                    Title = "RTTR"
+                });
+                newCourseData.Lessons.Add(new Lesson
+                {
+                    Name = "Test 4",
+                    Title = "RTTR"
+                });
+
+                _dbContext.SaveChanges();
+
+                return RedirectToAction(nameof(Index));
+            }
+            else 
+            {
+                return View();
+            }
         }
     }
 }

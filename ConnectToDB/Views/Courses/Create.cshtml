@@ -1,13 +1,22 @@
 ﻿@model Course
 
 <form asp-action="Create">
+    <div asp-validation-summary="All" class="text-danger"></div>
+
     <div class="mb-3">
-        <label asp-for="Name" class="form-label">Name</label>
-        <input type="text" class="form-control"asp-for="Name">
+        <label asp-for="Name" class="form-label">Name *</label>
+        <input type="text" class="form-control" asp-for="Name">
+        <span asp-validation-for="Name" class="text-danger"></span>
     </div>
     <div class="mb-3">
-        <label asp-for="Title" class="form-label">Title</label>
+        <label asp-for="Title" class="form-label">Title *</label>
         <input type="text" class="form-control" asp-for="Title">
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Price" class="form-label">Price *</label>
+        <input type="text" class="form-control" asp-for="Price">
+        <span asp-validation-for="Price" class="text-danger"></span>
     </div>
 
     <button type="submit" class="btn btn-primary">Submit</button>
