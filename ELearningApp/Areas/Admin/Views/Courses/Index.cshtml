@@ -26,7 +26,7 @@
     @foreach(var courseItem in Model)
     {
         <div>
-            <a href="#">
+            <a asp-area="Admin" asp-controller="Courses" asp-action="Edit" asp-route-id="@courseItem.Id">
                 <div class="card animate-this uk-inline-clip">
                     <img src="/assets/images/course/2.png" alt="">
                     <div class="card-body text-center pb-3">

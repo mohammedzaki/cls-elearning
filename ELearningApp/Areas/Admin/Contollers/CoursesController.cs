@@ -1,6 +1,5 @@
-﻿using ELearningApp.Areas.Admin.Models.Courses;
-using ELearningApp.Data;
-using ELearningApp.Models;
+﻿using ELearningApp.Data;
+using ELearningApp.Data.Entities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ELearningApp.Areas.Admin.Contollers
@@ -28,22 +27,43 @@ namespace ELearningApp.Areas.Admin.Contollers
         }
 
         [HttpPost]
-        public IActionResult Create(Create model)
+        public IActionResult Create(Course model)
         {
             // save course model to db 
+            if (ModelState.IsValid)
+            {
+                _db.Courses.Add(model);
 
-            var newCourse = new Data.Entities.Course();
+                _db.SaveChanges();
 
-            newCourse.Title = model.Title;
-            newCourse.ShortDescription = model.ShortDescription;
-            newCourse.Description = "Test Save";
+                return RedirectToAction(nameof(Index));
+            }
+            return View();
+		}
 
-			_db.Courses.Add(newCourse);
+		[HttpGet]
+		public IActionResult Edit(int id)
+		{
+            var course = _db.Courses.Where(e => e.Id == id).FirstOrDefault();
+            if (course == null)
+            {
+                return NotFound();
+            }
+			return View(course);
+		}
 
-            _db.SaveChanges();
+		[HttpPost]
+		public IActionResult Edit(Course model)
+		{
+            if (ModelState.IsValid)
+            {
+                _db.Update(model);
+                _db.SaveChanges();
 
-            return RedirectToAction(nameof(Index));
-        }
+                return RedirectToAction(nameof(Index));
+            }
+			return View();
+		}
 
-    }
+	}
 }
