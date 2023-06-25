@@ -1,6 +1,17 @@
+using ELearningApp.Data;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddMvc();
+
+var connectionString = builder.Configuration.GetConnectionString("SqlServer");
+
+builder.Services.AddDbContext<ApplicationDbContext>(mysetting => { 
+    mysetting.UseSqlServer(connectionString);
+});
+
 
 var app = builder.Build();
 

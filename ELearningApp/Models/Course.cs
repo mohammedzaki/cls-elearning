@@ -9,8 +9,6 @@
         public string Description { get; set; } 
 
         public string ImgURL { get; set; }
-
-
         public List<string> CourseName { set;  get; }
     }
 }

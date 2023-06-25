@@ -5,15 +5,17 @@ namespace ELearningApp.Data
 {
     public class ApplicationDbContext : DbContext
     {
-        private readonly string _connectionString = 
-            @"Data Source=LAB2INS;Initial Catalog=ELearningAppDB;Integrated Security=True;TrustServerCertificate=True";
+		public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+			: base(options)
+		{
+		}
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder
-                .UseSqlServer(_connectionString);
-        }
+		public DbSet<Course> Courses { get; set; }
+        public DbSet<Lesson> Lessons { get; set; }
+        public DbSet<Instructor> Instructors { get; set; }
+        public DbSet<InstructorCourse> InstructorsCourse { get; set;}
+        public DbSet<Student> Students { get; set; }
+        public DbSet<StudentCourse> StudentsCourses { get; set; }
 
-        public DbSet<Course> Courses { get; set; }
-    }
+	}
 }

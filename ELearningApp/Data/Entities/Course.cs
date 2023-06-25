@@ -1,16 +1,20 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics.CodeAnalysis;
 
 namespace ELearningApp.Data.Entities
 {
-    public class Course
+    public class Course : BaseEntity
     {
-        [Key]
-        public int Id { get; set; }
+        [AllowNull]
+        public string? Title { get; set; }
 
-        public string Title { get; set; }
+		[AllowNull]
+		public string? Description { get; set; }
 
-        public string Description { get; set; }
+		[AllowNull]
+		public string? ShortDescription { get; set; }
 
-        public string ShortDescription { get; set; }
+        public virtual ICollection<Lesson> Lessons { get; set; }
     }
 }
