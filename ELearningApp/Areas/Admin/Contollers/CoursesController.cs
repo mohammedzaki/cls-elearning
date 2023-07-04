@@ -8,13 +8,11 @@ namespace ELearningApp.Areas.Admin.Contollers
     [Area("Admin")]
     public class CoursesController : Controller
     {
-        CourseRepository _repo;
-        ApplicationDbContext _db;
+        IRepository<Course> _repo;
 
-        public CoursesController(CourseRepository repo, ApplicationDbContext db)
+        public CoursesController(IRepository<Course> repo)
         {
             _repo = repo;
-            _db = db;
         }
 
         public async Task<IActionResult> Index() 
@@ -44,7 +42,7 @@ namespace ELearningApp.Areas.Admin.Contollers
 		[HttpGet]
 		public IActionResult Edit(int id)
 		{
-            var course = _db.Courses.Where(e => e.Id == id).FirstOrDefault();
+            var course = _repo.FindById(id);
             if (course == null)
             {
                 return NotFound();
@@ -53,13 +51,11 @@ namespace ELearningApp.Areas.Admin.Contollers
 		}
 
 		[HttpPost]
-		public IActionResult Edit(Course model)
+		public async Task<IActionResult> Edit(Course model)
 		{
             if (ModelState.IsValid)
             {
-                _db.Update(model);
-                _db.SaveChanges();
-
+                await _repo.UpdateAsync(model);
                 return RedirectToAction(nameof(Index));
             }
 			return View();

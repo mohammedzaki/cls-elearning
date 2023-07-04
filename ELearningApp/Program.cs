@@ -1,4 +1,6 @@
 using ELearningApp.Data;
+using ELearningApp.Data.Entities;
+using ELearningApp.Data.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -12,6 +14,9 @@ builder.Services.AddDbContext<ApplicationDbContext>(mysetting => {
     mysetting.UseSqlServer(connectionString);
 });
 
+builder.Services.AddScoped<IRepository<Course>, EntityRepository<Course>>();
+
+builder.Services.AddScoped<IRepository<Instructor>, EntityRepository<Instructor>>();
 
 var app = builder.Build();
 

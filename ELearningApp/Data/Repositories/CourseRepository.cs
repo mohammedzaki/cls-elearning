@@ -1,10 +1,11 @@
 ﻿using ELearningApp.Data.Entities;
+using Microsoft.CodeAnalysis.Classification;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel;
 
 namespace ELearningApp.Data.Repositories
 {
-    public class CourseRepository
+    public class CourseRepository : IRepository<Course>
     {
         private readonly ApplicationDbContext _context;
 
@@ -13,7 +14,13 @@ namespace ELearningApp.Data.Repositories
             _context = context;
         }
 
-        public async Task<List<Course>> GetAll() 
+        public async Task<Course> FindById(int id)
+        {
+            var course = await _context.Courses.Where(e => e.Id == id).FirstOrDefaultAsync();
+            return course ?? null;
+        }
+
+        public async Task<List<Course>> GetAll()
         {
             var coursesList = await _context.Courses.ToListAsync();
             foreach (var item in coursesList)
@@ -27,6 +34,12 @@ namespace ELearningApp.Data.Repositories
         public async Task SaveAsync(Course course) 
         {
             _context.Add(course);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task UpdateAsync(Course course)
+        {
+            _context.Update(course);
             await _context.SaveChangesAsync();
         }
     }
