@@ -1,5 +1,6 @@
 ﻿using ELearningApp.Data;
 using ELearningApp.Data.Entities;
+using ELearningApp.Data.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ELearningApp.Areas.Admin.Contollers
@@ -7,17 +8,19 @@ namespace ELearningApp.Areas.Admin.Contollers
     [Area("Admin")]
     public class CoursesController : Controller
     {
+        CourseRepository _repo;
         ApplicationDbContext _db;
 
-        public CoursesController(ApplicationDbContext context)
+        public CoursesController(CourseRepository repo, ApplicationDbContext db)
         {
-            _db = context;
+            _repo = repo;
+            _db = db;
         }
 
-        public IActionResult Index() 
+        public async Task<IActionResult> Index() 
         {
-            var allCourses = _db.Courses.ToList();
-            return View(allCourses);
+            var coursesList = await _repo.GetAll();
+            return View(coursesList);
         }
 
         [HttpGet]
@@ -27,15 +30,12 @@ namespace ELearningApp.Areas.Admin.Contollers
         }
 
         [HttpPost]
-        public IActionResult Create(Course model)
+        public async Task<IActionResult> Create(Course model)
         {
             // save course model to db 
             if (ModelState.IsValid)
             {
-                _db.Courses.Add(model);
-
-                _db.SaveChanges();
-
+                await _repo.SaveAsync(model);
                 return RedirectToAction(nameof(Index));
             }
             return View();

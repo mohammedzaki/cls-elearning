@@ -1,4 +1,5 @@
 ﻿using ELearningApp.Data;
+using ELearningApp.Data.Repositories;
 using ELearningApp.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -6,16 +7,17 @@ namespace ELearningApp.Controllers
 {
     public class CoursesController : Controller
     {
-		ApplicationDbContext _db;
+        CourseRepository _repo;
 
-		public CoursesController(ApplicationDbContext context)
-		{
-			_db = context;
-		}
-
-		public IActionResult Index()
+        public CoursesController(CourseRepository repo)
         {
-            return View();
+            _repo = repo;
+        }
+
+        public async Task<IActionResult> Index()
+        {
+            var coursesList = await _repo.GetAll();
+            return View(coursesList);
         }
     }
 }

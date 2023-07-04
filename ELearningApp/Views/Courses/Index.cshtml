@@ -1,4 +1,6 @@
-﻿@{
+﻿@model List<Course>
+
+@{
     ViewData["MenuCss"] = "";
     ViewData["Title"] = "Courses List";
 }
@@ -123,153 +125,37 @@
                 </div>
             </div>
 
-
-
-            <div class="course-card course-card-list">
-                <div class="course-card-thumbnail">
-                    <img src="../assets/images/course/1.png">
-                    <a href="course-intro.html" class="play-button-trigger"></a>
-                </div>
-                <div class="course-card-body">
-                    <a href="course-intro.html">
-                        <h4>Ultimate Web Designer And Developer Course </h4>
-                    </a>
-                    <p>
-                        HTML is the building blocks of the web. It gives pages structure and applies meaning
-                        to
-                        content. Take this course to learn how it all works and create your own pages!
-                    </p>
-                    <div class="course-details-info">
-                        <ul>
-                            <li> <i class="icon-feather-sliders"></i> Advance level </li>
-                            <li> By <a href="user-profile-1.html">Jonathan Madano </a> </li>
-                            <li>
-                                <div class="star-rating">
-                                    <span class="avg"> 4.8 </span> <span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span>
-                                </div>
-                            </li>
-                        </ul>
+            @foreach (var item in Model)
+            {
+                <div class="course-card course-card-list">
+                    <div class="course-card-thumbnail">
+                        <img src="@item.ImgURL">
+                        <a href="course-intro.html" class="play-button-trigger"></a>
                     </div>
+                    <div class="course-card-body">
+                        <a href="course-intro.html">
+                            <h4> Learn Angular Fundamentals From The Beginning </h4>
+                        </a>
+                        <p>
+                            Kick your Angular skills into action with this comprehensive dive into Angular and
+                            getting
+                            started the right way. Complete with best practices and architecture practices.
+                        </p>
+                        <div class="course-details-info">
+                            <ul>
+                                <li> <i class="icon-feather-sliders"></i> Binginner level </li>
+                                <li> By <a href="user-profile-1.html"> Stella Johnson</a> </li>
+                                <li>
+                                    <div class="star-rating">
+                                        <span class="avg"> 4.4 </span> <span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star half"></span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
 
-                </div>
-            </div>
-
-            <div class="course-card course-card-list">
-                <div class="course-card-thumbnail">
-                    <img src="../assets/images/course/2.png">
-                    <a href="course-intro.html" class="play-button-trigger"></a>
-                </div>
-                <div class="course-card-body">
-                    <a href="course-intro.html">
-                        <h4> Learn Angular Fundamentals From The Beginning </h4>
-                    </a>
-                    <p>
-                        Kick your Angular skills into action with this comprehensive dive into Angular and
-                        getting
-                        started the right way. Complete with best practices and architecture practices.
-                    </p>
-                    <div class="course-details-info">
-                        <ul>
-                            <li> <i class="icon-feather-sliders"></i> Binginner level </li>
-                            <li> By <a href="user-profile-1.html"> Stella Johnson</a> </li>
-                            <li>
-                                <div class="star-rating">
-                                    <span class="avg"> 4.4 </span> <span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star half"></span>
-                                </div>
-                            </li>
-                        </ul>
                     </div>
-
                 </div>
-            </div>
-
-            <div class="course-card course-card-list">
-                <div class="course-card-thumbnail">
-                    <img src="../assets/images/course/3.png">
-                    <a href="course-intro.html" class="play-button-trigger"></a>
-                </div>
-                <div class="course-card-body">
-                    <a href="course-intro.html">
-                        <h4> The Complete JavaScript From Scratch To Experts</h4>
-                    </a>
-                    <p>
-                        JavaScript is how you build interactivity on the web. Take this course to learn how
-                        to work
-                        with the DOM, create Objects, make AJAX calls, and much more!
-                    </p>
-                    <div class="course-details-info">
-                        <ul>
-                            <li> <i class="icon-feather-sliders"></i> Advance level </li>
-                            <li> By <a href="user-profile-1.html"> Adrian Mohani </a> </li>
-                            <li>
-                                <div class="star-rating">
-                                    <span class="avg"> 4.9 </span> <span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star half"></span>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="course-card course-card-list">
-                <div class="course-card-thumbnail">
-                    <img src="../assets/images/course/7.png">
-                    <a href="course-intro.html" class="play-button-trigger"></a>
-                </div>
-                <div class="course-card-body">
-                    <a href="course-intro.html">
-                        <h4> Bootstrap 4 From Scratch With 5 Real Projects </h4>
-                    </a>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt
-                        ut labore et dolore magna aliqua. enim ad minim veniam,
-                    </p>
-                    <div class="course-details-info">
-                        <ul>
-                            <li> <i class="icon-feather-sliders"></i> Binginner level </li>
-                            <li> By <a href="user-profile-1.html">Jonathan Madano </a> </li>
-                            <li>
-                                <div class="star-rating">
-                                    <span class="avg"> 4.4 </span> <span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star half"></span>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="course-card course-card-list">
-                <div class="course-card-thumbnail">
-                    <img src="../assets/images/course/6.png">
-                    <a href="course-intro.html" class="play-button-trigger"></a>
-                </div>
-                <div class="course-card-body">
-                    <a href="course-intro.html">
-                        <h4> The Complete 2020 Web Development Bootcamp</h4>
-                    </a>
-                    <p>
-                        HTML is the building blocks of the web. It gives pages structure and applies meaning
-                        to
-                        content. Take this course to learn how it all works and create your own pages!
-                    </p>
-                    <div class="course-details-info">
-                        <ul>
-                            <li> <i class="icon-feather-sliders"></i> Binginner level </li>
-                            <li> By <a href="#"> Stella Johnson </a> </li>
-                            <li>
-                                <div class="star-rating">
-                                    <span class="avg"> 4.9 </span> <span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star half"></span>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-
-                </div>
-            </div>
-
-
+            }
 
             <!-- pagination menu -->
             <ul class="uk-pagination my-5 uk-flex-center" uk-margin>

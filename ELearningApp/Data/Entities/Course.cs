@@ -15,6 +15,16 @@ namespace ELearningApp.Data.Entities
 		[Required]
 		public string ShortDescription { get; set; }
 
+        [Required]
+        public decimal Price { get; set; }
+
+
+        [NotMapped]
+        public string PriceStr { get; set; }
+
+        [NotMapped]
+		public string ImgURL { get; set; }
+
         public virtual ICollection<Lesson> Lessons { get; set; }
     }
 }
