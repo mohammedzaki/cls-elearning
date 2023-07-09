@@ -1,4 +1,5 @@
 ﻿using ConnectToDB.Data;
+using ConnectToDB.Data.Repos;
 using ConnectToDB.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -6,18 +7,18 @@ namespace ConnectToDB.Controllers
 {
     public class CoursesController : Controller
     {
-		ApplicationDbContext _dbContext;
+        IRepo<Course> _repo;
 
-        public CoursesController(ApplicationDbContext context)
+        public CoursesController(IRepo<Course> repo)
         {
-            _dbContext = context;
+            _repo = repo;
         }
 
         public IActionResult Index()
         {
-            var courseList = _dbContext.Courses.ToList();
+            //var courseList = _dbContext.Courses.ToList();
 
-            return View(courseList);
+            return View();
         }
 
 
@@ -34,8 +35,7 @@ namespace ConnectToDB.Controllers
             if (ModelState.IsValid)
             {
                 // Sava data to db
-                _dbContext.Courses.Add(newCourseData);
-
+                
                 newCourseData.Lessons.Add(new Lesson
                 {
                     Name = "Test",
@@ -57,7 +57,7 @@ namespace ConnectToDB.Controllers
                     Title = "RTTR"
                 });
 
-                _dbContext.SaveChanges();
+                _repo.Save(newCourseData);
 
                 return RedirectToAction(nameof(Index));
             }

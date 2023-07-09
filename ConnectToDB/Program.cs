@@ -1,4 +1,6 @@
 using ConnectToDB.Data;
+using ConnectToDB.Data.Repos;
+using ConnectToDB.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 
@@ -23,6 +25,10 @@ builder.Services.AddDbContext<ApplicationDbContext>(optionsBuilder => {
 	}
 });
 
+builder.Services.AddScoped<IRepo<Course>, CourseRepo>();
+
+builder.Services.AddScoped<IRepo<Course>, EntityRepo<Course>>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -46,4 +52,4 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
-+app.Run();
+app.Run();

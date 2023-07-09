@@ -29,6 +29,7 @@ namespace ELearningApp.Data.Repositories
 
         public virtual async Task SaveAsync(TEntity entity) 
         {
+            //entity.Id = NewId();
             _context.Add(entity);
             await _context.SaveChangesAsync();
         }

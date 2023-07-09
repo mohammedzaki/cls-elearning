@@ -14,9 +14,11 @@ builder.Services.AddDbContext<ApplicationDbContext>(mysetting => {
     mysetting.UseSqlServer(connectionString);
 });
 
-builder.Services.AddScoped<IRepository<Course>, EntityRepository<Course>>();
+builder.Services.AddScoped<IRepository<Course>, CourseRepository>();
 
 builder.Services.AddScoped<IRepository<Instructor>, EntityRepository<Instructor>>();
+builder.Services.AddScoped<IRepository<Lesson>, EntityRepository<Lesson>>();
+builder.Services.AddScoped<IRepository<Student>, EntityRepository<Student>>();
 
 var app = builder.Build();
 

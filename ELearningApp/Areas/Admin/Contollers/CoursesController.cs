@@ -10,7 +10,7 @@ namespace ELearningApp.Areas.Admin.Contollers
     {
         IRepository<Course> _repo;
 
-        public CoursesController(IRepository<Course> repo)
+        public CoursesController(IRepository<Course> repo, IRepository<Student> srpo)
         {
             _repo = repo;
         }
