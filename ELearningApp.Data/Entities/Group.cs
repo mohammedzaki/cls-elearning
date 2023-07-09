@@ -1,6 +1,6 @@
 ﻿namespace ELearningApp.Data.Entities
 {
-	public class Group
+	public class Group : BaseEntity
 	{
 	}
 }

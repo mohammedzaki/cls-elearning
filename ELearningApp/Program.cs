@@ -19,6 +19,7 @@ builder.Services.AddScoped<IRepository<Course>, CourseRepository>();
 builder.Services.AddScoped<IRepository<Instructor>, EntityRepository<Instructor>>();
 builder.Services.AddScoped<IRepository<Lesson>, EntityRepository<Lesson>>();
 builder.Services.AddScoped<IRepository<Student>, EntityRepository<Student>>();
+builder.Services.AddScoped<IRepository<Group>, EntityRepository<Group>>();
 
 var app = builder.Build();
 

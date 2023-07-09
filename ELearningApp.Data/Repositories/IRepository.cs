@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 namespace ELearningApp.Data.Repositories
 {
     public interface IRepository<TEntity>
+        where TEntity : class, IEntity, new()
     {
         Task<List<TEntity>> GetAll();
 

@@ -7,12 +7,9 @@ namespace ELearningApp.Data.Repositories
 {
     public class CourseRepository : EntityRepository<Course>
     {
-        private readonly ApplicationDbContext _context;
-
-        public CourseRepository(ApplicationDbContext context)
+        public CourseRepository(ApplicationDbContext context) 
             : base(context)
         {
-            _context = context;
         }
 
         public override async Task<List<Course>> GetAll()

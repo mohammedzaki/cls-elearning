@@ -6,9 +6,9 @@ using System.ComponentModel;
 namespace ELearningApp.Data.Repositories
 {
     public class EntityRepository<TEntity> : IRepository<TEntity> 
-        where TEntity : class, new()
+        where TEntity : class, IEntity, new()
     {
-        private readonly ApplicationDbContext _context;
+        protected readonly ApplicationDbContext _context;
 
         public EntityRepository(ApplicationDbContext context)
         {
@@ -17,8 +17,11 @@ namespace ELearningApp.Data.Repositories
 
         public virtual async Task<TEntity> FindById(int id)
         {
-            //var entity = await _context.Instructors.Where(e => e.Id == id).FirstOrDefaultAsync();
-            return null; // entity ?? null;
+            var result = await _context.Set<TEntity>()
+                .Where(e => e.Id == id)
+                .FirstOrDefaultAsync();
+
+            return result;
         }
 
         public virtual async Task<List<TEntity>> GetAll()
@@ -30,7 +33,9 @@ namespace ELearningApp.Data.Repositories
         public virtual async Task SaveAsync(TEntity entity) 
         {
             //entity.Id = NewId();
+            entity.CreatedAt = DateTime.UtcNow;
             _context.Add(entity);
+            // 
             await _context.SaveChangesAsync();
         }
 
