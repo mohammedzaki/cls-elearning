@@ -42,7 +42,7 @@ namespace ELearningApp.Areas.Admin.Contollers
 		[HttpGet]
 		public IActionResult Edit(int id)
 		{
-            var course = _
+            var course = _repo.FindById(id);
             if (course == null)
             {
                 return NotFound();
