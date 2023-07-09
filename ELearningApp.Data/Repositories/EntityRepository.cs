@@ -17,11 +17,10 @@ namespace ELearningApp.Data.Repositories
 
         public virtual async Task<TEntity> FindById(int id)
         {
-            var result = await _context.Set<TEntity>()
+            var entity = await _context.Set<TEntity>()
                 .Where(e => e.Id == id)
                 .FirstOrDefaultAsync();
-
-            return result;
+            return entity;
         }
 
         public virtual async Task<List<TEntity>> GetAll()
@@ -35,7 +34,6 @@ namespace ELearningApp.Data.Repositories
             //entity.Id = NewId();
             entity.CreatedAt = DateTime.UtcNow;
             _context.Add(entity);
-            // 
             await _context.SaveChangesAsync();
         }
 
