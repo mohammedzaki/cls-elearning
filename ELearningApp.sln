@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ELearningApp", "ELearningAp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConnectToDB", "ConnectToDB\ConnectToDB.csproj", "{7A819D03-14CE-4577-BAB4-4DE0A3B14CB9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ELearningApp.Data", "ELearningApp.Data\ELearningApp.Data.csproj", "{B8A61525-E899-495E-8BF8-C91A52AC2974}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ELearningApp.Data", "ELearningApp.Data\ELearningApp.Data.csproj", "{B8A61525-E899-495E-8BF8-C91A52AC2974}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ELearningApp.API", "ELearningApp.API\ELearningApp.API.csproj", "{81CECC3B-0388-4F84-B8E2-AC31BAB83EA1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ELearningApp.API", "ELearningApp.API\ELearningApp.API.csproj", "{81CECC3B-0388-4F84-B8E2-AC31BAB83EA1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ELearningApp.Core", "ELearningApp.Core\ELearningApp.Core.csproj", "{130D37D6-F976-4DF7-BAB3-56FC174A6890}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{81CECC3B-0388-4F84-B8E2-AC31BAB83EA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81CECC3B-0388-4F84-B8E2-AC31BAB83EA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81CECC3B-0388-4F84-B8E2-AC31BAB83EA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{130D37D6-F976-4DF7-BAB3-56FC174A6890}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{130D37D6-F976-4DF7-BAB3-56FC174A6890}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{130D37D6-F976-4DF7-BAB3-56FC174A6890}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{130D37D6-F976-4DF7-BAB3-56FC174A6890}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

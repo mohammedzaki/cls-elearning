@@ -11,7 +11,7 @@ builder.Services.AddMvc();
 var connectionString = builder.Configuration.GetConnectionString("SqlServer");
 
 builder.Services.AddDbContext<ApplicationDbContext>(mysetting => { 
-    mysetting.UseSqlServer(connectionString);
+    mysetting.UseSqlServer(connectionString, b => b.MigrationsAssembly("ELearningApp"));
 });
 
 builder.Services.AddScoped<IRepository<Course>, CourseRepository>();
@@ -21,9 +21,16 @@ builder.Services.AddScoped<IRepository<Lesson>, EntityRepository<Lesson>>();
 builder.Services.AddScoped<IRepository<Student>, EntityRepository<Student>>();
 builder.Services.AddScoped<IRepository<Group>, EntityRepository<Group>>();
 
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromSeconds(15);
+});
+
 var app = builder.Build();
 
 app.UseStaticFiles();
+
+app.UseSession();
 
 app.UseRouting();
 
