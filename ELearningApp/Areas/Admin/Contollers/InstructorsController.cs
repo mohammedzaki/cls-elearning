@@ -7,10 +7,12 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ELearningApp.Data;
 using ELearningApp.Data.Entities;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ELearningApp.Areas.Admin.Contollers
 {
     [Area("Admin")]
+    [Authorize]
     public class InstructorsController : Controller
     {
         private readonly ApplicationDbContext _context;

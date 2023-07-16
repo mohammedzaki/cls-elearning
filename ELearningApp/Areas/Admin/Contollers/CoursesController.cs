@@ -1,11 +1,13 @@
 ﻿using ELearningApp.Data;
 using ELearningApp.Data.Entities;
 using ELearningApp.Data.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ELearningApp.Areas.Admin.Contollers
 {
     [Area("Admin")]
+    [Authorize]
     public class CoursesController : Controller
     {
         IRepository<Course> _repo;

@@ -1,8 +1,10 @@
 ﻿using ELearningApp.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ELearningApp.Controllers
 {
+    [AllowAnonymous]
     public class HomeController : Controller
     {
 

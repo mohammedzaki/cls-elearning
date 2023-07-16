@@ -1,16 +1,16 @@
 ﻿using ELearningApp.Config;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ELearningApp.Areas.Admin.Contollers
 {
 	[Area("Admin")]
+	[Authorize]
 	public class HomeController : Controller
     {
-		
-
         public IActionResult Index()
         {
-			var username = HttpContext.Session.GetString(SessionKeys.SessionUserNameKey);
+			/*var username = HttpContext.Session.GetString(SessionKeys.SessionUserNameKey);
 
             var userid = HttpContext.Session.GetString(SessionKeys.SessionUserIdKey);
 
@@ -19,7 +19,7 @@ namespace ELearningApp.Areas.Admin.Contollers
 
 			if (string.IsNullOrEmpty(username))
 				return Redirect("/Admin/Login");
-
+*/
             return View();
 		}
 	}
