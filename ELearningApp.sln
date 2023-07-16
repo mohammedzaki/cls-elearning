@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ELearningApp.Data", "ELearn
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ELearningApp.API", "ELearningApp.API\ELearningApp.API.csproj", "{81CECC3B-0388-4F84-B8E2-AC31BAB83EA1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ELearningApp.Core", "ELearningApp.Core\ELearningApp.Core.csproj", "{130D37D6-F976-4DF7-BAB3-56FC174A6890}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ELearningApp.Core", "ELearningApp.Core\ELearningApp.Core.csproj", "{130D37D6-F976-4DF7-BAB3-56FC174A6890}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ELearningApp.Migrations", "ELearningApp.Migrations\ELearningApp.Migrations.csproj", "{7E38FE06-5435-42DF-A937-C946052C20EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{130D37D6-F976-4DF7-BAB3-56FC174A6890}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{130D37D6-F976-4DF7-BAB3-56FC174A6890}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{130D37D6-F976-4DF7-BAB3-56FC174A6890}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E38FE06-5435-42DF-A937-C946052C20EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E38FE06-5435-42DF-A937-C946052C20EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E38FE06-5435-42DF-A937-C946052C20EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E38FE06-5435-42DF-A937-C946052C20EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

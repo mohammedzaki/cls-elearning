@@ -18,7 +18,7 @@ namespace ELearningApp.Areas.Admin.Contollers
 			ViewBag.userid = userid;
 
 			if (string.IsNullOrEmpty(username))
-				return RedirectToAction("Index", "Auth");
+				return Redirect("/Admin/Login");
 
             return View();
 		}

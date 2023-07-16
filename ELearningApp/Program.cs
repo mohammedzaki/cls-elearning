@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddMvc();
+builder.Services.AddRazorPages();
 
 var connectionString = builder.Configuration.GetConnectionString("SqlServer");
 
@@ -44,5 +45,7 @@ app.UseEndpoints(endpoints =>
         name: "default",
         pattern: "{controller=Home}/{action=Index}/{id?}");
 });
+
+app.MapRazorPages();
 
 app.Run();
