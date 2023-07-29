@@ -1,6 +1,12 @@
+using ELearningAppReview.Controllers;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddMvc();
+
+builder.Services.AddTransient<ITransientService, OperationService>();
+builder.Services.AddScoped<IScopedService, OperationService>();
+builder.Services.AddSingleton<ISingletonService, OperationService>();
 
 var app = builder.Build();
 
